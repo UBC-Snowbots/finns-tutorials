@@ -3,6 +3,7 @@
 Welcome to my little tutorial on CMake - hopefully I can help take some of the magic out of this strange tool.
 
 This tutorial is split into 4 distinct sections:
+
 1. How to build "Hello World!"
 2. The CMake language
 3. How to test things
@@ -12,7 +13,7 @@ I recommend you keep the [CMake reference](https://cmake.org/cmake/help/v3.6/) a
 
 ## How to build "Hello World!"
 
-Example code is in the `hello_world` folder. To run the build, type `cmake . && make`.
+Example code is in the [hello_world](./hello_world) folder. To run the build, type `cmake . && make`.
 
 To build produce an executable, use the [`add_executable`](https://cmake.org/cmake/help/v3.6/command/add_executable.html) command.
 
@@ -28,7 +29,7 @@ A CMake command is a line that goes something like this:
 do_the_thing(a b NEXT_BIT c d AFTER_THAT e WITH_CHEESE_ON_TOP)
 ```
 
-Each command has its own name which comes before the brackets. Between the brackets, there are a series of arguments separated by spaces (to pass an argument with a space in it, write `a\ b` or one of the other tricks we'll cover later).
+Each command has its own name which comes before the brackets. Between the brackets, there are a series of arguments separated by spaces (to pass an argument with a space in it, write `a\ b` or one of the other tricks you can find [here](https://cmake.org/cmake/help/v3.0/manual/cmake-language.7.html#command-arguments).
 
 By convention, arguments in block caps are either flags enabling some feature or are separators that say something about the arguments that come after them. Take this boilerplate you'll find at the top of all the files we use in this tutorial for example:
 ```cmake
@@ -45,7 +46,7 @@ The only datatype in CMake is strings, so they had to get a little creative to a
 
 The CMake reference manual and some experimenting will tell you more than I ever could, but here I hope to highlight some interesting ~~features~~ gotchas of the language.
 
-I have attached some scripts you can run with `cmake -P thescript.cmake` in the `cmake_language` folder.
+I have attached some scripts you can run with `cmake -P thescript.cmake` in the [cmake_language](./cmake_language) folder.
 
 Topic list:
 
@@ -149,7 +150,7 @@ Note the lack of proper return values and the options you can give to various bu
 
 ## How to test things
 
-Testing is very simplistic. All you need is to write a test program using the framework of your choice (see my example under `testing` - it doesn't even use a framework, using `assert` for simplicity) and register it using the `add_test` function.
+Testing is very simplistic. All you need is to write a test program using the framework of your choice (see my example under [testing](./testing) - it doesn't use a framework, only standard assert) and register it using the `add_test` function.
 
 ```cmake
 # actually build stuff...
